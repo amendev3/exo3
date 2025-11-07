@@ -251,7 +251,7 @@ div3 div {
   margin: auto;
   align-self: center;
   display: block;
-  position: relative;
+  
   top: 90px;
 }
 .div7 h1 {
@@ -303,3 +303,98 @@ div3 div {
   align-items: center;
   flex-direction: row-reverse;
 }
+ /* === RESPONSIVE DESIGN — VERSION MOBILE === */
+
+/* Pour tablette */
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+/* Pour mobile */
+@media (max-width: 768px) {
+  .parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Tous les blocs prennent la largeur complète */
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8 {
+    width: 100%;
+    max-width: 100%;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Centrer le contenu à l’intérieur des blocs */
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ajustement des images */
+  .div1 img,
+  .div2 img,
+  .div3 img,
+  .div4 img,
+  .div5 img,
+  .div6 img,
+  .div7 img,
+  .div8 img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Ajustement des textes */
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+
+  /* Le bloc violet (div8) passe en colonne */
+  .div8 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Réduction de la taille des images à l’intérieur du bloc violet */
+  .div8 img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+
